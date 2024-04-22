@@ -14,8 +14,8 @@ pipeline {
             steps {
                 script {
                     // Активация виртуального окружения
-                    sh 'python3 -m venv venv'
-                    sh 'venv/bin/activate'
+                    sh 'python3 -m venv lab2/venv'
+                    sh 'source lab2/venv/bin/activate'
 
                     // Установка зависимостей из файла requirements.txt
                     sn 'pip install -r lab2/requirements.txt'
