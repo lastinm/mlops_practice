@@ -15,11 +15,11 @@ pipeline {
             steps {
                 script {
                     // Активация виртуального окружения
-                    bat 'python3 -m venv venv'
-                    bat 'venv\\Scripts\\activate'
+                    sh 'python3 -m venv venv'
+                    sh 'venv/Scripts/activate'
 
                     // Установка зависимостей из файла requirements.txt
-                    bat 'pip install -r lab2/requirements.txt'
+                    sn 'pip install -r lab2/requirements.txt'
                 }
             }
         }
