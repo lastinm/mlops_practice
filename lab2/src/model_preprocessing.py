@@ -25,7 +25,7 @@ DF_train.to_csv(f'train/data_train_prep.csv', index=False)
 print("Стандартизованные тренировочные данные записаны в файл data_train_prep.csv")
 
 # Загрузим данные из файла "data_test.csv"
-DF_test = pd.read_csv('test/data_test.csv')
+DF_test = pd.read_csv('../test/data_test.csv')
 
 # Обучаем на тренировочных данных
 X_test = DF_test['x']
