@@ -88,10 +88,10 @@ df_train = pd.DataFrame({'x': x_train, 'y': y_train})
 # print(x_train)
 # print(type(y_train))
 # print(y_train)
-df_train.to_csv(f'../train/data_train.csv', index=False)
+df_train.to_csv(f'lab2/train/data_train.csv', index=False)
 
 df_test = pd.DataFrame({'x': x_test, 'y': y_test})
-df_test.to_csv(f'../test/data_test.csv', index=False)
+df_test.to_csv(f'lab2/test/data_test.csv', index=False)
 print("Записаны данные с шумами в файлы data_train.csv, data_test.csv")
 
 # Сохраним данные без шумов
@@ -103,7 +103,7 @@ x_train_true, x_test_true, y_train_true, y_test_true = train_test_split(X, y_tru
 df_train_true = pd.DataFrame({'x': x_train_true, 'y': y_train_true})
 df_test_true = pd.DataFrame({'x': x_test_true, 'y': y_test_true})
 
-df_train_true.to_csv(f'../train/data_train_true.csv', index=False)
-df_test_true.to_csv(f'../test/data_test_true.csv', index=False)
+df_train_true.to_csv(f'lab2/train/data_train_true.csv', index=False)
+df_test_true.to_csv(f'lab2/test/data_test_true.csv', index=False)
 
 print("Записаны данные без шумов в файлы data_train_true, data_test_true.csv")
