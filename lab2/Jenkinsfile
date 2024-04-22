@@ -20,7 +20,7 @@ pipeline {
                     sh 'lab2/venv/bin/activate'
 
                     // Установка зависимостей из файла requirements.txt
-                    sn 'pip3 install -r lab2/requirements.txt'
+                    sh 'pip3 install -r lab2/requirements.txt'
                 }
             }
         }
