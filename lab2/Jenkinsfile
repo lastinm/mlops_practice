@@ -1,0 +1,53 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Start') {
+            steps {
+                script {
+                    echo 'Начало работы скриптов.'
+                }
+            }
+        }
+
+        stage('Генерация данных.') {
+            steps {
+                script {
+                    sh 'python3 data_creation.py'
+                }
+            }
+        }
+
+        stage('Предобработка данных.') {
+            steps {
+                script {
+                    sh 'python3 model_preparation.py'
+                }
+            }
+        }
+
+        stage('Обучение модели.') {
+            steps {
+                script {
+                    sh 'python3 model_preprocessing.py'
+                }
+            }
+        }
+
+        stage('Проверка обученной модели на тестовых данных.') {
+            steps {
+                script {
+                    sh 'python3 model_testing.py'
+                }
+            }
+        }
+
+        stage('Finish') {
+            steps {
+                script {
+                    echo 'Работа скриптов завершена успешно'
+                }
+            }
+        }
+    }
+}
