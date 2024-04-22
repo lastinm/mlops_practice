@@ -5,10 +5,10 @@ from joblib import load                       # в scikit-learn ничего т�
 
 
 # Загрузим обученную модель
-model = load('../model/model.joblib')
+model = load('lab2/model/model.joblib')
 
 # Загрузим данные из файла "data_test.csv"
-DF = pd.read_csv('../test/data_test_prep.csv')
+DF = pd.read_csv('lab2/test/data_test_prep.csv')
 
 # Разделим данные на факторы (X) и целевую переменную (y):
 # X = data_test['x'].values.reshape(-1, 1)
