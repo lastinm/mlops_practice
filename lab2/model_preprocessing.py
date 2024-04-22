@@ -4,7 +4,7 @@ from sklearn.pipeline import Pipeline               # Пайплайн
 
 
 # Загрузим данные из файла "data_train.csv"
-DF_train = pd.read_csv('train/data_train.csv')
+DF_train = pd.read_csv('../train/data_train.csv')
 
 # Выполним предобработку данных с помощью sklearn.preprocessing.StandardScaler
 scaler = StandardScaler()

@@ -4,7 +4,7 @@ from joblib import dump                                 # в scikit-learn нич
                                                         # пользуемся joblib
 
 # Читаем данные из файла
-DF = pd.read_csv('train/data_train_prep.csv', delimiter=',', header=0, index_col=False)
+DF = pd.read_csv('../train/data_train_prep.csv', delimiter=',', header=0, index_col=False)
 
 # Выделяем признаки и целевой показатель
 X_train, y_train = DF.iloc[:,0:1], DF.iloc[:,1]
@@ -21,6 +21,6 @@ print('intercept_', model.intercept_)
 print('Coefficients', model.coef_)
 
 # Сохраняем обученную модель в файл
-dump(model, 'model/model.joblib')  # чтобы сохранить объект
+dump(model, '../model/model.joblib')  # чтобы сохранить объект
 
 print("Модель записана в файл model.joblib")
