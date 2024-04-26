@@ -6,6 +6,10 @@ from sklearn.metrics import accuracy_score
 from joblib import dump                                 # в scikit-learn ничего такого особенного нет
                                                         # пользуемся joblib
 
+# Получаем правильные пути
+SCRIPTS_PATH = os.path.dirname(os.path.abspath(__file__))      # Каталог со скриптами
+PROJECT_PATH = os.path.dirname(SCRIPTS_PATH)                   # Каталог проекта
+
 # Загрузка датасета iris
 iris = load_iris()
 X = iris.data
@@ -14,6 +18,7 @@ y = iris.target
 # Разделение данных на обучающий и тестовый наборы
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
+print(X_test[:10])
 # Обучение модели случайного леса
 rf_model = RandomForestClassifier()
 rf_model.fit(X_train, y_train)
@@ -25,19 +30,11 @@ rf_y_pred = rf_model.predict(X_test)
 rf_accuracy = accuracy_score(y_test, rf_y_pred)
 print("Random Forest Accuracy:", rf_accuracy)
 
-# Получаем правильные пути
-# script_directory = os.path.dirname(os.path.abspath(__file__))
-# print("Каталог, из которого запущен скрипт:", script_directory)
-script_directory = os.path.abspath(__file__)
-parent_dir = os.path.dirname(script_directory)
-parent_parent_dir = os.path.dirname(parent_dir)
-# print("Путь к вышестоящему каталогу:", parent_parent_dir)
-true_path = os.path.join(parent_parent_dir, 'model', 'model.joblib')
-# print(true_path)
-
 # Сохраняем обученную модель в файл
+path_to_file = os.path.join(PROJECT_PATH, 'model', 'model.joblib')
+
 try:
-    dump(rf_model, true_path)
-    print('Модель успешно сохранена в:', true_path)
+    dump(rf_model, path_to_file)
+    print('Модель успешно сохранена в:', path_to_file)
 except Exception as e:
     print('Произошла ошибка при сохранении модели:', e)
