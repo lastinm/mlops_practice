@@ -1,1 +1,0 @@
-uvicorn api_app:app

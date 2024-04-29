@@ -1,23 +1,31 @@
 # mlops_practice
 УрФУ/Skillfactory. Автоматизация администрирования MLOps
 
-Запуск приложения API
-Для запуска приложения необходимо дать команду:
+Для запуска приложения API необходимо дать команду:
 
-$ uvicorn task_3_api_v2:app
+$ uvicorn src.api_app:app --host 0.0.0.0 --port 8000
 
-Проверка работы API
-Для проверки разработаны скриты для утилиты curl:
+или запустить командный файл **start.bat** (Windows), **start.sh** (*nix like).
 
-curl_get_local_root.sh - проверяем обращение методом GET к корню сайта;
-curl_post_local_predict.sh - проверяем обращения методом POST по пути /predict/.
+Для проверки работы приложения имеется командный файл с утилитой curl:
 
+$ predict.bat (predict.sh)
 
-You can then build and run the Docker image:
+При этом осуществляется обращение к API приложению методом POST по пути /predict.
+
+Для создания docker образа микросервиса создан файл Dokerfile. 
+Создание образа вручную осуществляется командой:
 
 $ docker build -t mlops-lab3-app .
+
+Запуск контейнера из образа:
+
 $ docker run -d --name mlops-lab3 mlops-lab3-app:latest
 
-docker-compose up -d
+Автоматическая сборка образа и запуск контейнера осуществляется при помощи 
+файла-сценария docker-compose.yml. Для этого необходимо выполнить команду: 
+
+$ docker-compose up -d
+
 
 
