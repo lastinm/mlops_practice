@@ -16,7 +16,7 @@ X = iris.data
 y = iris.target
 
 # Разделение данных на обучающий и тестовый наборы
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=41)
 
 print(X_test[:10])
 # Обучение модели случайного леса
