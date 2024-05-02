@@ -17,8 +17,8 @@ print(train_df.info())
 
 try:
     # Сохранение обновленных датасетов в CSV
-    train_df.to_csv('../dataset/train.csv', index=False)
-    test_df.to_csv('../dataset/test.csv', index=False)
+    train_df.to_csv('../datasets/train.csv', index=False)
+    test_df.to_csv('../datasets/test.csv', index=False)
     print("Датасеты успешно сохранены в каталоге ../dataset под именами train.csv и test.csv.")
 except Exception as e:
     print("Произошла ошибка при сохранении датасетов:", e)
